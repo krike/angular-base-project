@@ -1,6 +1,14 @@
-# AngularBase
+# Base app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+Base structure for Angular project. 
+
+Includes:
+
+* Nyan and clear-terminal test reporter
+* NgBootstrap with base layout
+* Home & Nav component
+* Headless chrome for e2e testing
+* Base gitlab CI config file
 
 ## Development server
 

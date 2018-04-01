@@ -1,0 +1,47 @@
+image: node:8
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - yarn
+    - yarn build
+  artifacts:
+    paths:
+    - dist/
+
+test:
+  image: amio/node-chrome:latest
+  stage: test
+  script:
+    - yarn && yarn test:ci
+
+lint:
+  stage: test
+  script:
+    - yarn && yarn lint
+
+e2e:
+  image: weboaks/node-karma-protractor-chrome
+  stage: test
+  script:
+    - yarn e2e
+
+#pages:
+#  stage: deploy
+#  script:
+#    - cp -r dist public
+#  when: always
+#  artifacts:
+#    paths:
+#      - public
+#  allow_failure: true
+#  only:
+#    - master
