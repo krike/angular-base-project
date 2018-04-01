@@ -9,7 +9,19 @@ exports.config = {
         './e2e/**/*.e2e-spec.ts'
     ],
     capabilities: {
-        'browserName': 'chrome'
+        'browserName': 'chrome',
+        /**
+         * Chrome is not allowed to create a SUID sandbox when running inside Docker
+         */
+        chromeOptions: {
+            args: [
+                'no-sandbox',
+                '--disable-web-security',
+                "--headless",
+                "--disable-gpu",
+                "--window-size=800,600"
+            ]
+        }
     },
     directConnect: true,
     baseUrl: 'http://localhost:4200/',

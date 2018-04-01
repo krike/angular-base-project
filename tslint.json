@@ -1,4 +1,7 @@
 {
+    "extends": [
+        "tslint-eslint-rules"
+    ],
     "rulesDirectory": [
         "node_modules/codelyzer"
     ],
@@ -11,20 +14,23 @@
             "check-space"
         ],
         "curly": true,
-        "deprecation": {
-            "severity": "warn"
-        },
         "eofline": true,
         "forin": true,
         "import-blacklist": [
             true,
-            "rxjs",
-            "rxjs/Rx"
+            "rxjs"
         ],
         "import-spacing": true,
         "indent": [
             true,
             "spaces"
+        ],
+        "ter-indent": [
+            true,
+            4,
+            {
+                "SwitchCase": 1
+            }
         ],
         "interface-over-type-literal": true,
         "label-position": true,
@@ -35,14 +41,8 @@
         "member-access": false,
         "member-ordering": [
             true,
-            {
-                "order": [
-                    "static-field",
-                    "instance-field",
-                    "static-method",
-                    "instance-method"
-                ]
-            }
+            "static-before-instance",
+            "variables-before-functions"
         ],
         "no-arg": true,
         "no-bitwise": true,
@@ -72,7 +72,7 @@
         "no-switch-case-fall-through": true,
         "no-trailing-whitespace": true,
         "no-unnecessary-initializer": true,
-        "no-unused-expression": true,
+        "no-unused-expression": false,
         "no-use-before-declare": true,
         "no-var-keyword": true,
         "object-literal-sort-keys": false,
@@ -90,7 +90,6 @@
         ],
         "radix": true,
         "semicolon": [
-            true,
             "always"
         ],
         "triple-equals": [
@@ -129,7 +128,6 @@
             "app",
             "kebab-case"
         ],
-        "no-output-on-prefix": true,
         "use-input-property-decorator": true,
         "use-output-property-decorator": true,
         "use-host-property-decorator": true,
