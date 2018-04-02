@@ -6,13 +6,15 @@ import {AppComponent} from './app.component';
 import { NavComponent } from './layout/nav/nav.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
+import {PageNotFoundComponent} from './page-not-found.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         NavComponent,
-        HomeComponent
+        HomeComponent,
+        PageNotFoundComponent,
     ],
     imports: [
         BrowserModule,
